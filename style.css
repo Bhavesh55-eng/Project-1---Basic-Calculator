@@ -1,20 +1,23 @@
-
 :root {
-  --bg-color: #0b192f;
-  --btn-color: #142c47;
-  --text-color: #fff;
-  --primary: #00bfa6;
-  --red: #ff4e4e;
+  /* Theme color variables for dark mode */
+  --bg-color: #0b192f;            /* Calculator background */
+  --btn-color: #142c47;           /* Button background */
+  --text-color: #fff;             /* Main text color */
+  --primary: #00bfa6;             /* Primary accent color */
+  --red: #ff4e4e;                 /* Error and clear button color */
 }
+
 body.light {
-  --bg-color: #f2f2f2;
-  --btn-color: #ffffff;
-  --text-color: #111;
-  --primary: #00bfa6;
-  --red: #ff4e4e;
+  /* Light mode overrides for theme colors */
+  --bg-color: #f2f2f2;            /* Calculator background (light) */
+  --btn-color: #ffffff;            /* Button background (light) */
+  --text-color: #111;              /* Main text color (light) */
+  --primary: #00bfa6;              /* Primary accent color remains same */
+  --red: #ff4e4e;                  /* Error and clear button color */
 }
 
 * {
+  /* Reset default styles and set font for entire app */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -22,24 +25,27 @@ body.light {
 }
 
 body {
+  /* Center calculator on the page and apply background from variable */
   background: #cfd8dc;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background: var(--bg-color);
-  transition: all 0.3s ease;
+  height: 100vh;                     /* Full viewport height */
+  background: var(--bg-color);       /* Dynamically use variable background */
+  transition: all 0.3s ease;         /* Smooth theme transitions */
 }
 
 .calculator {
-  background: var(--bg-color);
+  /* Calculator container styles */
+  background: var(--bg-color);       /* Uses theme variable */
   width: 320px;
-  border-radius: 24px;
+  border-radius: 24px;               /* Rounded corners */
   padding: 16px;
-  box-shadow: 0 10px 30px rgba(237, 234, 234, 0.588);
+  box-shadow: 0 10px 30px rgba(237, 234, 234, 0.588); /* Soft outer shadow */
 }
 
 .top-bar {
+  /* Header section of calculator */
   text-align: center;
   color: var(--text-color);
   font-weight: 600;
@@ -48,57 +54,68 @@ body {
 }
 
 .display {
+  /* Display section for current expression and result */
   text-align: right;
   padding: 16px 8px;
 }
 
 .expression {
+  /* Styles for the expression text */
   color: var(--text-color);
   font-size: 1.2em;
-  opacity: 0.7;
+  opacity: 0.7;                      /* Muted for contrast */
 }
 
 .result {
+  /* Styles for result output */
   color: var(--text-color);
   font-size: 2.5em;
   font-weight: bold;
 }
 
 .buttons {
+  /* Layout for calculator buttons */
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr);   /* Four columns */
   gap: 12px;
   margin-top: 12px;
 }
 
 .btn {
+  /* Base button styles */
   padding: 18px;
   font-size: 1.4em;
   border: none;
-  border-radius: 50%;
-  background: var(--btn-color);
+  border-radius: 50%;                      /* Circular buttons */
+  background: var(--btn-color);            /* Uses theme variable */
   color: var(--text-color);
-  transition: all 0.2s ease;
+  transition: all 0.2s ease;               /* Button animation */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 .btn:hover {
+  /* Lighten button on hover */
   filter: brightness(1.1);
 }
 .btn:active {
+  /* Shrink button slightly when pressed */
   transform: scale(0.95);
 }
 
 .operator {
+  /* Operator buttons (e.g., +, -, ×, ÷) have accent color */
   color: var(--primary);
 }
 .red {
+  /* Red color for special buttons (e.g., C for clear) */
   color: var(--red);
 }
 .equal {
+  /* Equal button with special background and text color */
   background: var(--primary);
   color: #fff;
   font-weight: bold;
 }
 .equal:hover {
+  /* Darken equal button on hover */
   background: #00a996;
 }
