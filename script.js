@@ -85,7 +85,7 @@ document.addEventListener('keydown', (e) => {
   } else if (key === '%') {
     handleInput(null, 'percent');
   } else if (key === '(' || key === ')') {
-    handleInput(null, 'brackets'); // smart toggle
+    handleInput(null, 'brackets'); 
   } else if (key === '=' || key === 'Enter') {
     handleInput(null, 'equals');
   } else if (key.toLowerCase() === 'c' || key === 'Escape') {
@@ -98,3 +98,4 @@ document.addEventListener('keydown', (e) => {
     expressionEl.textContent = expression || '0';
   }
 });
+
